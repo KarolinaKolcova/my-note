@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Note registration</title>
+</head>
+<body>
+<form th:action="@{/registration}" th:object="${noteData}" method="post">
+    <div><input type="text" placeholder="Address" th:field="*{address}"></div>
+    <div><input type="text" placeholder="Phone" th:field="*{phone}"></div>
+    <div><input type="submit" value="Register!"></div>
+
+</form>
+</body>
+</html>
