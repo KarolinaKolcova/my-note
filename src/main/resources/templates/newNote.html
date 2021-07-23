@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Note</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">Create new note</div>
+    <th:block th:if="${error != null}">
+        <div class="error" th:text="${error}"></div>
+    </th:block>
+    <div>
+        <form th:action="@{/notes/new}" th:object="${note}" method="post">
+            <div class="form-row"><input type="text" placeholder="Title..." class="input" th:field="*{title}"></div>
+            <div class="form-row"><textarea placeholder="Description here..." class="textarea" th:field="*{description}"></textarea></div>
+            <div class="form-row"><input type="submit" value="Create" class="btn"></div>
+        </form>
+    </div>
+</body>
+</html>

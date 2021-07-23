@@ -15,6 +15,8 @@ public class Note {
         this.categories = categories;
     }
 
+    public Note() {}
+
     public String getTitle() {
         return title;
     }

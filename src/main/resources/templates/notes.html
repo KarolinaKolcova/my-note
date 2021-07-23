@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>All Notes</title>
-<link th:href="@{/css/main.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="header">All tickets</div>
+    <div class="header">
+        <div>All notes</div>
+        <div><a href="/notes/new" class="add-link">+</a></div>
+    </div>
     <div class="table-row">
         <div class="table-header">Title</div>
         <div class="table-header">Categories</div>
         <div class="table-header">Author</div>
     </div>
     <div th:each="note : ${notes}" class="table-row">
-        <div th:text="${note.title}"></div>
-        <div th:text="${note.categories}"></div>
+        <div th:text="${note.title}" class="title"></div>
+        <div th:text="${note.categories}" class="categories"></div>
         <div th:text="${note.author.firstName}"></div>
     </div>
 </body>
